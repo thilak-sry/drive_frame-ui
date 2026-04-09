@@ -81,6 +81,7 @@ export const TheCostGap = () => {
               label="NATIONAL OEM"
               title="What premium brands run"
               description="Agency shoots. 6-week lead. ₹10L+ production."
+              imageSrc="/Images/OEM.png"
               pillColor="rgba(0, 229, 160, 0.1)"
               pillTextColor="#00E5A0"
               imgBorder="rgba(255, 255, 255, 0.08)"
@@ -93,6 +94,7 @@ export const TheCostGap = () => {
               label="YOUR REALITY NOW"
               title="What most dealers ship"
               description="Generic copy. One format. Missed deadlines."
+              imageSrc="/Images/RealityNow.png"
               pillColor="rgba(255, 80, 80, 0.1)"
               pillTextColor="#FF6060"
               imgBorder="rgba(255, 80, 80, 0.2)"
@@ -107,6 +109,7 @@ export const TheCostGap = () => {
               label="✦ DRIVEFRAME"
               title="What you get. One session."
               description="Every format. On-brand copy. Campaign-ready."
+              imageSrc="/Images/DriveFrame.png"
               pillColor="#00E5A0"
               pillTextColor="#0A0A0E"
               imgBorder="rgba(0, 229, 160, 0.25)"
@@ -147,6 +150,7 @@ function CostColumn({
   label,
   title,
   description,
+  imageSrc,
   pillColor,
   pillTextColor,
   imgBorder,
@@ -209,14 +213,31 @@ function CostColumn({
 
       <div
         style={{
-          height: '200px',
+          height: '400px',
           borderRadius: '4px',
           border: `${isDashed ? '1px dashed' : '1px solid'} ${imgBorder}`,
           backgroundColor: imgBg,
           marginBottom: '8px',
           filter: isDegraded ? 'saturate(0.3) blur(1px)' : 'none',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
-      />
+      >
+        {imageSrc && (
+          <img
+            src={imageSrc}
+            alt={label}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              opacity: isDegraded ? 0.7 : 1
+            }}
+          />
+        )}
+      </div>
 
       <div
         style={{
