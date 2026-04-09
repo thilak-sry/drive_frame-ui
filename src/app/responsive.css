@@ -131,23 +131,22 @@ section[id="no-shoot"] > div {
     padding-right: 16px !important;
   }
   
-  /* NavBar: neatly wrap links on mobile and adjust padding */
+  /* NavBar: perfectly stack logo and links on mobile */
   nav[style*="position: fixed"], 
   nav[style*="position:fixed"] {
-    padding: 12px 16px !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    gap: 12px !important;
+    padding: 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
   }
   
-  /* Make the links center beautifully when wrapping */
+  /* Make the links center beautifully */
   nav > div:nth-child(2) {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 12px !important;
+    gap: 16px !important;
     width: 100% !important;
-    margin-top: 4px !important;
   }
   
   /* Hide the desktop spacer on mobile */
@@ -167,15 +166,33 @@ section[id="no-shoot"] > div {
     border-radius: 16px !important;
     padding: 16px !important;
   }
+  
+  /* Give the email inputs clear emphasis/boundaries on mobile */
   form input {
     width: 100% !important;
     text-align: center !important;
     margin-bottom: 12px !important;
-    min-height: 40px !important;
+    min-height: 48px !important;
+    border-radius: 8px !important;
   }
+  
+  /* Hero section input (on a dark glass background) */
+  section:not([id="cta"]) form input {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+  }
+
+  /* Early Access CTA input (on a white pill background) */
+  section[id="cta"] form input {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #000 !important;
+  }
+
   form button {
     width: 100% !important;
-    min-height: 44px !important;
+    min-height: 48px !important;
   }
 
   /* Adjust grid gap and padding for all cards */
