@@ -102,7 +102,6 @@ export const TheCostGap = () => {
               caption="Blurry. Off-brand. Wrong ratio."
               captionColor="rgba(255, 80, 80, 0.5)"
               isDashed
-              isDegraded
               hasBorderRight
             />
             <CostColumn
@@ -213,7 +212,7 @@ function CostColumn({
 
       <div
         style={{
-          height: '400px',
+          height: '320px',
           borderRadius: '4px',
           border: `${isDashed ? '1px dashed' : '1px solid'} ${imgBorder}`,
           backgroundColor: imgBg,
@@ -230,8 +229,8 @@ function CostColumn({
             src={imageSrc}
             alt={label}
             style={{
-              width: '100%',
-              height: '100%',
+              maxWidth: '100%',
+              maxHeight: '100%',
               objectFit: 'contain',
               opacity: isDegraded ? 0.7 : 1
             }}
