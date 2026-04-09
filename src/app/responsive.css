@@ -161,8 +161,8 @@ section[id="no-shoot"] > div {
   }
   
   /* Make forms stack on mobile */
-  form[style*="display: flex"] > div,
-  form[style*="display: inline-flex"] {
+  section form > div,
+  section[id="cta"] form {
     flex-direction: column !important;
     border-radius: 16px !important;
     padding: 16px !important;
@@ -171,9 +171,11 @@ section[id="no-shoot"] > div {
     width: 100% !important;
     text-align: center !important;
     margin-bottom: 12px !important;
+    min-height: 40px !important;
   }
   form button {
     width: 100% !important;
+    min-height: 44px !important;
   }
 
   /* Adjust grid gap and padding for all cards */
