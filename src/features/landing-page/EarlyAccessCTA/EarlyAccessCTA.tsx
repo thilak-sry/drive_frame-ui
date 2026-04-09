@@ -22,8 +22,10 @@ export const EarlyAccessCTA = ({ onSubmit }: EarlyAccessCTAProps) => {
     }
   };
 
-  const adTemplates = Array.from({ length: 13 }, (_, i) => ({
-    image: `/Images/${i + 1}.png`
+  // Pre-shuffled array of indices 1 to 13 to ensure randomness without hydration mismatch
+  const shuffledIndices = [7, 2, 11, 4, 13, 1, 9, 5, 8, 3, 12, 10, 6];
+  const adTemplates = shuffledIndices.map((i) => ({
+    image: `/Images/${i}.png`
   }));
 
   return (
