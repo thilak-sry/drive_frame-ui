@@ -27,18 +27,20 @@ section[id="cta"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
 /* But inner content wrapper of CTA needs constrained padding */
-section[id="cta"] > div:last-of-type {
+section[id="cta"]>div:last-of-type {
   padding-left: clamp(16px, 4vw, 48px) !important;
   padding-right: clamp(16px, 4vw, 48px) !important;
 }
 
 /* ---------- NavBar nav links – hide on very small screens ---------- */
 @media (max-width: 900px) {
-  nav[style*="padding"] > div:nth-child(2) {
+  nav[style*="padding"]>div:nth-child(2) {
     gap: 16px !important;
   }
-  nav[style*="padding"] > div:nth-child(2) button {
+
+  nav[style*="padding"]>div:nth-child(2) button {
     font-size: 12px !important;
   }
 }
@@ -49,19 +51,19 @@ section[id="cta"] > div:last-of-type {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
-  
+
   /* Fix specific borders that stack awkwardly */
-  div[style*="border-left: 1px"], 
+  div[style*="border-left: 1px"],
   div[style*="border-right: 1px"] {
     border-left: none !important;
     border-right: none !important;
   }
-  
+
   div[style*="borderRight: '1px solid var(--border)'"] {
     border-right: none !important;
   }
 
-  div[style*="1fr 60px 1fr"] > div:nth-child(2) {
+  div[style*="1fr 60px 1fr"]>div:nth-child(2) {
     min-height: 48px !important;
     writing-mode: horizontal-tb !important;
     transform: none !important;
@@ -72,6 +74,7 @@ section[id="cta"] > div:last-of-type {
 
 /* ---------- General max-width containers fluid padding ---------- */
 @media (min-width: 1600px) {
+
   /* On very large screens scale up padding gracefully */
   section {
     padding-top: clamp(80px, 8vh, 120px) !important;
@@ -95,34 +98,37 @@ footer {
 
 /* ---------- Hero AdFrames hidden on very small viewports ---------- */
 @media (max-width: 768px) {
+
   /* Hide floating ad frames on small screens to avoid overflow */
-  section > div[style*="position: absolute"][style*="border: 1px solid rgba(0, 212, 160"] {
+  section>div[style*="position: absolute"][style*="border: 1px solid rgba(0, 212, 160"] {
     display: none !important;
   }
 }
 
 /* Override the fixed max-widths to occupy available screen space */
-section > div[style*="maxWidth: 1120px"], 
-section > div[style*="max-width: 1120px"],
-section > div[style*="maxWidth: 1200px"],
-section > div[style*="max-width: 1200px"],
-section > div[style*="maxWidth: 1400px"],
-section > div[style*="max-width: 1400px"],
-section > div[style*="maxWidth: 1600px"],
-section > div[style*="max-width: 1600px"],
-section > div > div[style*="maxWidth"] {
-  max-width: 100% !important; /* expands completely to fill screen width */
+section>div[style*="maxWidth: 1120px"],
+section>div[style*="max-width: 1120px"],
+section>div[style*="maxWidth: 1200px"],
+section>div[style*="max-width: 1200px"],
+section>div[style*="maxWidth: 1400px"],
+section>div[style*="max-width: 1400px"],
+section>div[style*="maxWidth: 1600px"],
+section>div[style*="max-width: 1600px"],
+section>div>div[style*="maxWidth"] {
+  max-width: 100% !important;
+  /* expands completely to fill screen width */
   width: 100% !important;
 }
 
 /* Also for NoShoot section */
-section[id="no-shoot"] > div {
+section[id="no-shoot"]>div {
   max-width: 100% !important;
   width: 100% !important;
 }
 
 /* ---------- Mobile Specific Breakpoints (< 768px) ---------- */
 @media (max-width: 768px) {
+
   /* General section padding for mobile */
   section {
     padding-top: 60px !important;
@@ -130,44 +136,60 @@ section[id="no-shoot"] > div {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
-  
+
   /* NavBar: perfectly stack logo and links on mobile */
-  nav[style*="position: fixed"], 
+  nav[style*="position: fixed"],
   nav[style*="position:fixed"] {
     padding: 16px !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 20px !important;
   }
-  
+
   /* Make the links center beautifully */
-  nav > div:nth-child(2) {
+  nav>div:nth-child(2) {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 16px !important;
     width: 100% !important;
   }
-  
+
   /* Hide the desktop spacer on mobile */
-  nav > div:last-child {
+  nav>div:last-child {
     display: none !important;
   }
 
   /* Hero Section tweaks */
+  section:first-of-type {
+    align-items: center !important;
+  }
+  section:first-of-type > div[style*="left"] {
+    text-align: center !important;
+  }
+  section:first-of-type p {
+    margin: 0 auto 48px !important;
+  }
+  section:first-of-type form {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
   h1 {
     font-size: 40px !important;
+    margin-top: 80px !important;
+    margin-bottom: 200px !important;
+    /* Spacing added to reveal the car in background video */
   }
-  
+
   /* Make forms stack on mobile */
-  section form > div,
+  section form>div,
   section[id="cta"] form {
     flex-direction: column !important;
     border-radius: 16px !important;
     padding: 16px !important;
   }
-  
-  /* Give the email inputs clear emphasis/boundaries on mobile */
+
+  /* Give the email input clear emphasis/boundaries on mobile */
   form input {
     width: 100% !important;
     text-align: center !important;
@@ -175,19 +197,24 @@ section[id="no-shoot"] > div {
     min-height: 48px !important;
     border-radius: 8px !important;
   }
-  
-  /* Hero section input (on a dark glass background) */
+
+  /* Hero Section (dark container) */
   section:not([id="cta"]) form input {
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     color: #fff !important;
   }
 
-  /* Early Access CTA input (on a white pill background) */
+  /* Early Access CTA (light container) */
   section[id="cta"] form input {
     background: rgba(0, 0, 0, 0.04) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
     color: #000 !important;
+  }
+
+  /* Enhance placeholder contrast in light container */
+  section[id="cta"] form input::placeholder {
+    color: rgba(0, 0, 0, 0.5) !important;
   }
 
   form button {
@@ -210,18 +237,19 @@ section[id="no-shoot"] > div {
   }
 
   /* NoShoot Raw Image vs Campaign Asset stack styling */
-  div[style*="grid-template-columns: 1fr"] > div {
+  div[style*="grid-template-columns: 1fr"]>div {
     border-left: none !important;
     border-right: none !important;
   }
 }
 
 @media (max-width: 480px) {
+
   /* Smaller font for compact mobile */
   h2[style*="font-size: clamp"] {
     font-size: 28px !important;
   }
-  
+
   /* Adjust TheWorkflow timeline number to fit nicely */
   div[style*="fontSize: 48px"] {
     font-size: 32px !important;
