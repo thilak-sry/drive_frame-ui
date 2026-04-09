@@ -146,6 +146,19 @@ section[id="no-shoot"]>div {
     gap: 20px !important;
   }
 
+  /* IntelligentReformat stack */
+  .reformat-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .reformat-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
   /* Make the links center beautifully */
   nav>div:nth-child(2) {
     display: flex !important;
@@ -164,16 +177,20 @@ section[id="no-shoot"]>div {
   section:first-of-type {
     align-items: center !important;
   }
-  section:first-of-type > div[style*="left"] {
+
+  section:first-of-type>div[style*="left"] {
     text-align: center !important;
   }
+
   section:first-of-type p {
     margin: 0 auto 48px !important;
   }
+
   section:first-of-type form {
     justify-content: center !important;
     margin: 0 auto !important;
   }
+
   h1 {
     font-size: 40px !important;
     margin-top: 80px !important;

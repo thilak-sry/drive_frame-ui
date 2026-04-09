@@ -5,7 +5,21 @@ import { useScrollReveal } from '../../../hooks/useScrollReveal';
 
 export const IntelligentReformat = () => {
   const [selectedFormat, setSelectedFormat] = useState<'9:16' | '4:5' | '1:1' | '16:9'>('1:1');
+  const [mounted, setMounted] = React.useState(false);
+  const [windowWidth, setWindowWidth] = React.useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  React.useEffect(() => {
+    setMounted(true);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const { elementRef, isVisible } = useScrollReveal();
+
+  const isMobile = mounted && windowWidth < 600;
+  const isTablet = mounted && windowWidth < 900;
+  const multiplier = isMobile ? 1.0 : (isTablet ? 1.2 : 1.5);
 
   const formatDimensions = {
     '9:16': { width: 120, height: 213 },
@@ -28,9 +42,15 @@ export const IntelligentReformat = () => {
   };
 
   return (
-    <section style={{ borderTop: '1px solid var(--border)', backgroundColor: 'var(--bg)', padding: '100px 48px' }}>
+    <section 
+      className="reformat-section"
+      style={{ borderTop: '1px solid var(--border)', backgroundColor: 'var(--bg)', padding: '100px 48px' }}
+    >
       <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+        <div 
+          className="reformat-grid"
+          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}
+        >
           <div
             ref={elementRef}
             style={{
@@ -136,9 +156,10 @@ export const IntelligentReformat = () => {
               }}
             >
               <div
+                className="reformat-preview-frame"
                 style={{
-                  width: `${formatDimensions[selectedFormat].width * 1.5}px`, // Scaled up for better visibility
-                  height: `${formatDimensions[selectedFormat].height * 1.5}px`,
+                  width: `${formatDimensions[selectedFormat].width * multiplier}px`,
+                  height: `${formatDimensions[selectedFormat].height * multiplier}px`,
                   border: '1px solid rgba(0, 212, 160, 0.3)',
                   backgroundColor: 'rgba(0, 212, 160, 0.03)',
                   display: 'flex',
