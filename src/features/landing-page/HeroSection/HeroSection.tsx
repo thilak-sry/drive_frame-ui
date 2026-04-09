@@ -90,52 +90,53 @@ export const HeroSection = ({ onSubmit }: HeroSectionProps) => {
             <AdFrame ratio="1:1" size={{ width: 96, height: 96 }} position={{ bottom: '25%', right: '30%' }} />
 
             {/* Content */}
-            <div style={{ maxWidth: '920px', textAlign: 'center', position: 'relative', zIndex: 1, padding: '0 48px' }}>
-                <div
-                    style={{
-                        fontFamily: 'DM Sans, sans-serif',
-                        fontSize: '13px',
-                        color: 'var(--accent)',
-                        letterSpacing: '0.15em',
-                        textTransform: 'uppercase',
-                        marginBottom: '32px',
-                        fontWeight: 500,
-                    }}
-                >
-                    Automotive Ad Intelligence
-                </div>
-
-                <h1
-                    style={{
-                        fontFamily: 'Barlow, sans-serif',
-                        fontWeight: 900,
-                        fontSize: 'clamp(56px, 8vw, 96px)',
-                        lineHeight: 1.0,
-                        letterSpacing: '-0.03em',
-                        marginBottom: '32px',
-                    }}
-                >
-                    <div style={{ color: 'var(--text-primary)' }}>Campaign-ready</div>
-                    <div style={{ color: 'var(--accent)' }}>automotive ads.</div>
-                    <div style={{ color: 'var(--text-primary)' }}>One session.</div>
-                </h1>
-
-                <p
-                    style={{
-                        fontFamily: 'DM Sans, sans-serif',
-                        fontWeight: 400,
-                        fontSize: '18px',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.6,
-                        maxWidth: '680px',
-                        margin: '0 auto 48px',
-                    }}
-                >
-                    Every format. Every platform. Copy that knows what a car ad sounds like. No brief-to-agency lag. No revision cycles.
-                </p>
-
-                <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'center', maxWidth: '480px', margin: '0 auto' }}>
+            <div style={{ width: '100%', maxWidth: '1200px', textAlign: 'left', position: 'relative', zIndex: 1, padding: '0 48px' }}>
+                <div style={{ maxWidth: '800px' }}>
                     <div
+                        style={{
+                            fontFamily: 'DM Sans, sans-serif',
+                            fontSize: '13px',
+                            color: 'var(--accent)',
+                            letterSpacing: '0.15em',
+                            textTransform: 'uppercase',
+                            marginBottom: '32px',
+                            fontWeight: 500,
+                        }}
+                    >
+                        Automotive Ad Intelligence
+                    </div>
+
+                    <h1
+                        style={{
+                            fontFamily: 'Barlow, sans-serif',
+                            fontWeight: 900,
+                            fontSize: 'clamp(56px, 8vw, 96px)',
+                            lineHeight: 1.0,
+                            letterSpacing: '-0.03em',
+                            marginBottom: '32px',
+                        }}
+                    >
+                        <div style={{ color: 'var(--text-primary)' }}>Campaign-ready</div>
+                        <div style={{ color: 'var(--accent)' }}>automotive ads.</div>
+                        <div style={{ color: 'var(--text-primary)' }}>One session.</div>
+                    </h1>
+
+                    <p
+                        style={{
+                            fontFamily: 'DM Sans, sans-serif',
+                            fontWeight: 400,
+                            fontSize: '18px',
+                            color: 'var(--text-secondary)',
+                            lineHeight: 1.6,
+                            maxWidth: '680px',
+                            marginBottom: '48px',
+                        }}
+                    >
+                        Every format. Every platform. Copy that knows what a car ad sounds like. No brief-to-agency lag. No revision cycles.
+                    </p>
+
+                    <form onSubmit={handleSubmit} style={{ display: 'flex', maxWidth: '480px' }}>
+                        <div
                         style={{
                             display: 'flex',
                             alignItems: 'center',
@@ -204,6 +205,7 @@ export const HeroSection = ({ onSubmit }: HeroSectionProps) => {
                         </button>
                     </div>
                 </form>
+                </div>
             </div>
             <style>
                 {`
